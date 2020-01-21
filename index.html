@@ -3,9 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>My test page</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" media="screen">
   </head>
   <body>
-  	<p><b>Welcome to phase 1 of our website! Go 3JCS!</b></p>
-    <img src="images/dog.jpeg" alt="Cute Dog">
+  	<p><b>Welcome to phase 1 of our website! Please log in to continue.</b></p>
+
+  	<form action="action-center.php" method="post"> <!--this still needs to actually go somewhere-->
+
+		<div class="imgcontainer">
+    			<img src="images/dog.jpeg" alt="Cute Dog">
+  		</div>
+
+  		<div class="container">
+    		<label for="uname"><b>Username</b></label>
+    		<input type="text" placeholder="Enter Username" name="uname" required>
+
+    		<label for="psw"><b>Password</b></label>
+    		<input type="password" placeholder="Enter Password" name="psw" required>
+
+    		<button type="submit">Login</button>
+    		<label>
+      			<input type="checkbox" checked="checked" name="remember"> Remember me
+    		</label>
+  		</div>
+
+  		<div class="container" style="background-color:#f1f1f1">
+
+    		<button type="button" class="cancelbtn">Cancel</button>
+    		<span class="psw">Forgot <a href="#">password?</a></span>
+
+  		</div>
+	</form>
   </body>
 </html>
