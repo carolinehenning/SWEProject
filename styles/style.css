@@ -1,12 +1,12 @@
 
 /* Bordered form */
-form {
+/*form {
   border: 3px solid #f1f1f1;
-}
+} */
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
-  width: 100%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -16,13 +16,16 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: lightblue;
+  color: black;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
+  font-family: Courier;
+  font-weight:bold;
+  font-size:20px;
 }
 
 /* Add a hover effect for buttons */
@@ -31,10 +34,12 @@ button:hover {
 }
 
 /* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
+.signinbtn {
+  width: 50%;
+  padding: 5px 10px;
+  background-color: rgb(0, 153, 255);
+  font-size:15px
+  
 }
 
 /* Center the avatar image inside this container */
@@ -52,6 +57,8 @@ img.avatar {
 /* Add padding to containers */
 .container {
   padding: 16px;
+  text-align: center;
+
 }
 
 /* The "Forgot password" text */
@@ -70,3 +77,16 @@ span.psw {
     width: 100%;
   }
 }
+
+body{
+  background-color:rgb(243, 242, 242);
+}
+
+
+test
+{
+	font-family: Courier;
+	color: red;
+	font-size:20px;
+}
+
