@@ -1,0 +1,49 @@
+h1 {
+    font-family: Georgia;
+    text-align: center;
+    color: darkblue;
+    font-size: 48px;
+    padding: 14px 20px;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: grey;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    font-family: Courier;
+    font-weight:bold;
+    font-size:20px;
+}
+  
+  /* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+    text-align: center;
+}
+
+/* Website Background */
+body{
+    background-color:rgb(243, 242, 242);
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+
+    button {
+      width: 100%;
+    }
+}

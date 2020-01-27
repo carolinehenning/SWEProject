@@ -9,3 +9,8 @@ document.querySelector('.signupbtn').onclick = function() {
 document.querySelector('.signinbtn').onclick = function() {
     window.location.replace('index.html'); // needs to be replaced with sign in page
 }
+
+// Current Topics Button Click Event
+document.querySelector('.topicbtn').onclick = function() {
+    window.location.replace('topics.html'); 
+}
