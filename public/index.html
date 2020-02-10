@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mindful Scrolling</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.8.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.8.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.8.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.8.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.8.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" media="screen">
+    <script src="scripts/authentication.js"></script>
+    <script src="scripts/app.js"></script>
+  </head>
+  
+  <body>  
+
+      <div class="imgcontainer">
+        <img src="images/startlearning.png" alt="Sign Up to Start Learning"><br>
+        <img src="images/dog.jpeg" alt="Cute dog">
+      </div>
+
+      <div class="container">
+      
+          <input class="mdl-textfield__input" type="text" placeholder="Full Name" id="name" name="name">
+          <br><br>
+
+          <input class="mdl-textfield__input" type="text" placeholder="Email Address" id="email" name="email" required>
+          <br><br>
+
+          <input class="mdl-textfield__input" type="text" placeholder="Username" name="username" required>
+          <br><br>
+
+          <input class="mdl-textfield__input" type="password" placeholder="Enter Password (min. 8 characters)" id="password" name="password" required>
+          <br><br>
+
+          <button class="signupbtn" id="signup" name="signup">Sign up now!</button>
+
+          <button class="signinbtn" id="signin" name="signin">Already Have an Account? Sign In!</button>
+      
+          <button type="button" class="topicbtn">Current Topics</button>
+
+        </div>
+
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+
+  </body>
+</html>
