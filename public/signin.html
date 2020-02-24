@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<title>Bootstrap Elegant Sign Up Form</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script src="scripts/authentication.js"></script>
+
+<style type="text/css">
+	body {
+		color: #999;
+		background: #fafafa;
+		font-family: 'Roboto', sans-serif;
+	}
+	.form-control {
+        min-height: 41px;
+		box-shadow: none;
+		border-color: #e6e6e6;
+	}
+	.form-control:focus {
+		border-color: #00c1c0;
+	}
+    .form-control, .btn {        
+        border-radius: 3px;
+    }
+	.signin-form {
+		width: 425px;
+		margin: 0 auto;
+		padding: 30px 0;
+	}
+	.signin-form h2 {
+		color: #333;
+		font-weight: bold;
+        margin: 0 0 25px;
+    }
+    .signin-form form {
+    	margin-bottom: 15px;
+        background: #fff;
+		border: 1px solid #f4f4f4;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 40px 50px;
+    }
+	.signin-form .form-group {
+		margin-bottom: 20px;
+	}
+	.signinn-form label {
+		font-weight: normal;
+		font-size: 13px;
+	}
+	.signin-form input[type="checkbox"] {
+		margin-top: 2px;
+	}    
+    .signin-form .btn {        
+        font-size: 16px;
+        font-weight: bold;
+		background: #00c1c0;
+		border: none;
+		min-width: 140px;
+        outline: none !important;
+    }
+	.signin-form .btn:hover, .signup-form .btn:focus {
+		background: #00b3b3;
+	}
+	.signin-form a {
+		color: #00c1c0;
+		text-decoration: none;
+	}	
+	.signin-form a:hover {
+		text-decoration: underline;
+	}
+</style>
+</head>
+<body>
+<div class="signin-form">
+    <form action="/examples/actions/confirmation.php" method="post">
+        <h2>Sign In</h2>
+
+        <div class="form-group">
+        	<input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required="required">
+        </div>
+
+		<div class="form-group">
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required="required">
+        </div>
+        
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+        </div>
+    </form>
+	<div class="text-center">New here? <a href="signup.html">Sign up here</a></div>
+</div>
+
+</body>
+</html>
