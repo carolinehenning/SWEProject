@@ -3,25 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>Mindful Scrolling</title>
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.8.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.8.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.8.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.8.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.8.1/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles/style.css" media="screen">
-    <script src="scripts/authentication.js"></script>
-    <script src="scripts/app.js"></script>
+	<script type="text/javascript" data-main="scripts/main" src="scripts/require.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
   </head>
   
   <body>  
+    <script src="/__/firebase/7.9.1/firebase-app.js"></script>
+<script src="/__/firebase/7.9.1/firebase-auth.js"></script>
+
+  <!-- Initialize Firebase -->
+  <script type="text/javascript" src="/__/firebase/init.js"></script>
 
       <div class="imgcontainer">
-        <img src="images/startlearning.png" alt="Sign Up to Start Learning"><br>
-        <img src="images/dog.jpeg" alt="Cute dog">
+        <img src="images/startlearning.png" alt="Sign Up to Start Learning" width="100%"><br>
+        <img src="images/scrollinggirl.jpg" alt="Scroller" width="100%">
       </div>
 
       <div class="container">
@@ -42,11 +38,14 @@
 
           <button class="signinbtn" id="signin" name="signin">Already Have an Account? Sign In!</button>
       
-          <button type="button" class="topicbtn">Current Topics</button>
+          <button onclick="window.location.href='views/topics.html'" type="button" class="topicbtn" id="topicbtn">Current Topics</button>
 
         </div>
 
-<script>
+		
+   		<script type="text/javascript" src="scripts/app.js"></script>
+   		<script type="text/javascript" src="scripts/authentication.js"></script>
+	<script>
       document.addEventListener('DOMContentLoaded', function() {
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
         // // The Firebase SDK is initialized and available here!
@@ -68,6 +67,6 @@
         }
       });
     </script>
-
+	
   </body>
 </html>
