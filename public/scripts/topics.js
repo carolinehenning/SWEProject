@@ -2,7 +2,7 @@
 
 // Behavior for clicking on the 'Current Topics' Heading... right now this redirects to the homepage.
 // we will want to adjust this later, but now we have a way to return home
-document.querySelector('h1').onclick = function() {
+document.querySelector('#what-interests-you').onclick = function() {
     window.location.replace('../index.html');
 }
 
