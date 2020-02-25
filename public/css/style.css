@@ -38,8 +38,7 @@ button:hover {
 
 /* Center the avatar image inside this container */
 .imgcontainer {
-  width: 50%;
-  transform: translateX(50%);
+  width: 100%;
   text-align: center;
 }
 
