@@ -5,17 +5,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-<title>Bootstrap Elegant Sign Up Form</title>
+<title>Sign In</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-<script src="scripts/authentication.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/signin.css" media="screen">
 </head>
 <body>
 
 <div class="signin-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+
+    <script src="/__/firebase/7.9.1/firebase-app.js"></script>
+  <script src="/__/firebase/7.9.1/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="../scripts/authentication.js"></script>
+
+    <!-- <form action="/examples/actions/confirmation.php" method="post"> -->
         <h2>Sign In</h2>
 
         <div class="form-group">
@@ -27,7 +32,7 @@
         </div>
         
 		<div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+            <button type="submit" id="signin" class="btn btn-primary btn-lg">Sign In</button>
         </div>
     </form>
 	<div class="text-center">New here? <a href="signup.html">Sign up here</a></div>

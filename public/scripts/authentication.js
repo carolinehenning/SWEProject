@@ -1,6 +1,4 @@
-require(['firebase'], function (firebase)
-{
-});
+console.log("Hello, we're in authentication.js");
 
 /**
  * Handles the sign in button press.
@@ -35,14 +33,27 @@ function toggleSignIn() {
                 alert(errorMessage);
             }
             console.log(error);
-            document.getElementById('signin').disabled = false;
+            if (document.getElementById('signin') !== null) {
+                document.getElementById('signin').disabled = false;
+            }
             // [END_EXCLUDE]
         });
         window.location.href = "topics.html";
         // [END authwithemail]
     }
-    document.getElementById('signin').disabled = true;
+    if (document.getElementById('signin') !== null) {
+        document.getElementById('signin').disabled = true;
+    }
+}
 
+/**
+ * Validates email entry for sign up
+ */
+function emailCheck(email) {
+    var expr = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var result = expr.test(email);
+    console.log(result);
+    return result;
 }
 
 /**
@@ -50,6 +61,11 @@ function toggleSignIn() {
  */
 function handleSignUp() {
     console.log("in handleSignUp");
+    if (firebase.auth().currentUser) {
+        // [START signout]
+        firebase.auth().signOut();
+        // [END signout]
+    }
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     if (email.length < 4) {
@@ -73,9 +89,15 @@ function handleSignUp() {
             alert(errorMessage);
         }
         console.log(error);
+        return;
         // [END_EXCLUDE]
     });
     // [END createwithemail]
+    var isSomeoneSignedIn = firebase.auth().currentUser;
+    console.log(isSomeoneSignedIn);
+    if (isSomeoneSignedIn) {
+        location.href="profile.html";
+    }
 }
 
 /**
@@ -125,11 +147,13 @@ function sendPasswordReset() {
  */
 function initApp() {
     console.log("in initApp");
+    var signin = document.getElementById('signin');
+    var signup = document.getElementById('signup');
     // Listening for auth state changes.
     // [START authstatelistener]
     firebase.auth().onAuthStateChanged(function (user) {
         // [START_EXCLUDE silent]
-        document.getElementById('quickstart-verify-email').disabled = true;
+        // document.getElementById('quickstart-verify-email').disabled = true;
         // [END_EXCLUDE]
         if (user) {
             // User is signed in.
@@ -141,31 +165,43 @@ function initApp() {
             var uid = user.uid;
             var providerData = user.providerData;
             // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+            // document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('signin').textContent = 'Sign out';
-            document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+            // document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
             if (!emailVerified) {
-                document.getElementById('quickstart-verify-email').disabled = false;
+                // document.getElementById('quickstart-verify-email').disabled = false;
             }
             // [END_EXCLUDE]
         } else {
             // User is signed out.
             // [START_EXCLUDE]
-            document.getElementById('signup').textContent = 'Signed out';
-            document.getElementById('signin').textContent = 'Sign in';
-            document.getElementById('quickstart-account-details').textContent = 'null';
+            if (signup !== null) {
+                signup.textContent = 'Signed out';
+            }
+            if (signin !== null) {
+                signin.textContent = 'Sign in';
+            }
+            
+            // document.getElementById('quickstart-account-details').textContent = 'null';
             // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
-        document.getElementById('signin').disabled = false;
+        if (signin !== null) {
+            document.getElementById('signin').disabled = false;
+        }       
         // [END_EXCLUDE]
     });
     // [END authstatelistener]
 
-    document.getElementById('signin').addEventListener('click', toggleSignIn, false);
-    document.getElementById('signup').addEventListener('click', handleSignUp, false);
-    document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
-    document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
+    if (signin !== null) {
+        document.getElementById('signin').addEventListener('click', toggleSignIn, false);
+    }
+    if (signup !== null) {
+        document.getElementById('signup').addEventListener('click', handleSignUp, false);
+    }
+    
+    // document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
+    // document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
 }
 
 window.onload = function () {
