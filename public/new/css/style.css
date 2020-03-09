@@ -14,6 +14,33 @@ body {
   color: #0d1e2d;
 }
 
+button {
+  font-family: "Inconsolata", monospace;
+  background-color: #eceff2;
+  font-size: 2px;
+  border: none;
+  text-align: center;
+  display: inline-block;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/**
+button {
+  background-color: grey; 
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  font-family: Courier;
+  font-weight:bold;
+  font-size:20px;
+} **/
+
 a {
   color: #777;
 }
