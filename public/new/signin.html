@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Sign up - MindfulScrolling</title>
+  <title>Login - MindfulScrolling</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -38,6 +38,11 @@
 
 <body>
 
+  <script src="/__/firebase/7.9.1/firebase-app.js"></script>
+  <script src="/__/firebase/7.9.1/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="js/authentication.js"></script>
+
   <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
     <div class="container py-2 py-md-5">
       <div class="row align-items-start">
@@ -46,7 +51,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="profile.html">Profile</a></li>
             <li><a href="topics.html">Topics</a></li>
-            <li class="active"><a href="signup.html">Sign up</a></li>
+            <li class="active"><a href="login.html">Login</a></li>
             <!-- <li><a href="works.html">Works</a></li> -->
           </ul>
         </div>
@@ -87,8 +92,8 @@
 
         <div class="row mb-5 align-items-end">
           <div class="col-md-6" data-aos="fade-up">
-            <h2>Sign up</h2>
-            <p class="mb-0">Already a member? Click <a href="signin.html">here</a> to log in.
+            <h2>Login</h2>
+            <p class="mb-0">Not signed up? Click <a href="signup.html">here</a> to make an account.
             </p>
           </div>
 
@@ -96,7 +101,7 @@
 
         <div class="row">
           <div class="col-md-6 mb-5 mb-md-0" data-aos="fade-up">
-
+            
             <!-- 
               THIS LINE NEEDS TO BE CHANGED TO USE FIREBASE FILES
             -->
@@ -115,7 +120,7 @@
                 </div>
                 <div class="col-md-12 form-group">
                   <label for="name">Password</label>
-                  <input type="text" class="form-control" name="password" id="password" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <input type="password" class="form-control" name="password" id="password" data-rule="minlen:4" data-msg="Please enter a password with at least 8 characters" />
                   <!-- <div class="validate"></div> -->
                 </div>
                 <!-- <div class="col-md-12 form-group">
@@ -132,7 +137,7 @@
                 </div> -->
 
                 <div class="col-md-6 form-group">
-                  <input type="submit" class="readmore d-block w-100" value="Sign up">
+                  <input type="submit" id="signin" class="readmore d-block w-100" value="Log in">
                 </div>
               </div>
 
@@ -198,6 +203,7 @@
   <script src="vendor/isotope/isotope.pkgd.min.js"></script>
   <script src="vendor/aos/aos.js"></script>
   <script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+  
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
