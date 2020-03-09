@@ -36,6 +36,12 @@ h6,
   padding: 7rem 0;
 }
 
+#tofeed {
+  position: absolute;
+  right: 100px;
+  font-size: 30px;
+}
+
 .filters a {
   color: #000;
   display: inline-block;
