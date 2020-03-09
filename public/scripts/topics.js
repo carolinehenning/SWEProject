@@ -1,5 +1,12 @@
 'use strict';
 
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        document.getElementById("welcome").innerHTML = user.email;
+    }
+    console.log(user.email);
+});
+
 // Behavior for clicking on the 'Current Topics' Heading... right now this redirects to the homepage.
 // we will want to adjust this later, but now we have a way to return home
 document.querySelector('#what-interests-you').onclick = function() {
