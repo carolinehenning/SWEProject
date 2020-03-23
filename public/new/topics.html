@@ -38,6 +38,9 @@
 
 <body>
 
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
 
   <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
     <div class="container py-2 py-md-5">
@@ -108,7 +111,7 @@
               <span class="la la-cube la-3x mb-4"></span>
               <h4 class="h4 mb-2">Science</h4>
               <p>Discover the latest in scientific research, plus opinions, profiles, commentary, and more.</p>
-              <input type="checkbox" id="subscribe-science"> Click to subscribe</input>
+              <input type="checkbox" id="Science"> Click to subscribe</input>
               <br></br>
               <ul class="list-unstyled list-line">
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing</li>
@@ -122,7 +125,7 @@
               <span class="la la-mobile la-3x mb-4"></span>
               <h4 class="h4 mb-2">Technology</h4>
               <p>Breaking news and analysis on computing, the web, blogs, games, gadgets, social media, broadband, and more.</p>
-              <input type="checkbox" id="subscribe-technology"> Click to subscribe</input>
+              <input type="checkbox" id="Technology"> Click to subscribe</input>
               <br></br>
               <ul class="list-unstyled list-line">
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing</li>
@@ -136,7 +139,7 @@
               <span class="la la-image la-3x mb-4"></span>
               <h4 class="h4 mb-2">Film</h4>
               <p>Movie reviews and film news, including articles about big-budget blockbusters, foreign films, and independent filmmakers.</p>
-              <input type="checkbox" id="subscribe-film"> Click to subscribe</input>
+              <input type="checkbox" id="Film"> Click to subscribe</input>
               <br></br>
               <ul class="list-unstyled list-line">
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing</li>
@@ -150,7 +153,7 @@
               <span class="la la-search la-3x mb-4"></span>
               <h4 class="h4 mb-2">Music</h4>
               <p>Current music news, artist interviews, album reviews, and music industry news.</p>
-              <input type="checkbox" id="subscribe-music"> Click to subscribe</input>
+              <input type="checkbox" id="Music"> Click to subscribe</input>
               <br></br>
               <ul class="list-unstyled list-line">
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing</li>
@@ -164,7 +167,7 @@
               <span class="la la-search la-3x mb-4"></span>
               <h4 class="h4 mb-2">Food</h4>
               <p>Information about all things gastronomical, from recipes to food and restaurant reviews.</p>
-              <input type="checkbox" id="subscribe-food"> Click to subscribe</input>
+              <input type="checkbox" id="Food"> Click to subscribe</input>
               <br></br>
               <ul class="list-unstyled list-line">
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing</li>
@@ -178,7 +181,7 @@
               <span class="la la-search la-3x mb-4"></span>
               <h4 class="h4 mb-2">Travel</h4>
               <p>Discover exciting world events, travel guides to global destinations, and tips and photography about the best places to visit.</p>
-              <input type="checkbox" id="subscribe-travel"> Click to subscribe</input>
+              <input type="checkbox" id="Travel"> Click to subscribe</input>
               <br></br>
               <ul class="list-unstyled list-line">
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing</li>
@@ -192,7 +195,7 @@
               <span class="la la-search la-3x mb-4"></span>
               <h4 class="h4 mb-2">Literature</h4>
               <p>Discover the latest in commentary and analysis on literature.</p>
-              <input type="checkbox" id="subscribe-literature"> Click to subscribe</input>
+              <input type="checkbox" id="Literature"> Click to subscribe</input>
               <br></br>
               <ul class="list-unstyled list-line">
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing</li>
@@ -206,7 +209,7 @@
               <span class="la la-search la-3x mb-4"></span>
               <h4 class="h4 mb-2">Wellness</h4>
               <p>Learn more about fitness, dieting, nutrition, medicine, diseasing, and healthy living.</p>
-              <input type="checkbox" id="subscribe-wellness"> Click to subscribe</input>
+              <input type="checkbox" id="Wellness"> Click to subscribe</input>
               <br></br>
               <ul class="list-unstyled list-line">
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing</li>
@@ -220,7 +223,7 @@
         </div>
       </div>
 
-      <button id="tofeed" onclick="location.href='index.html'" style="font-size: 20px"> Show me my feed </button>
+      <button id="tofeed" onclick="toFeed()" style="font-size: 20px"> Show me my feed </button>
 
       <!-- <div class="site-section pb-0">
         <div class="container">
@@ -291,6 +294,7 @@
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
+  <script src="js/topics.js"></script>
 
 </body>
 
