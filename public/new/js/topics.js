@@ -154,5 +154,5 @@ function toFeed() {
       console.error("Error adding document: ", error);
     });
   }
-	window.location.href = "works.html";
+	window.location.href = "index.html";
 }
