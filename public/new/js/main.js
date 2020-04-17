@@ -3,17 +3,19 @@
 * Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
 * License: https://bootstrapmade.com/license/
 */
+if (!firebase.apps.length) {
 firebase.initializeApp({
   apiKey: 'AIzaSyCu20JG8AjK8WkSykOnDx1EMABwpeETtgQ',
   authDomain: 'swe-project-63ce1.firebaseapp.com',
   projectId: 'swe-project-63ce1'
 });
+}
 
 var db = firebase.firestore();
 var topics = document.querySelectorAll(".topic");
 var user = firebase.auth().currentUser;
 
-if (topics != null) {
+if (topics != null && user != null) {
 	var i = 0;
 	var topicList = db.collection("topics").doc(user);
 	console.log(topicList);

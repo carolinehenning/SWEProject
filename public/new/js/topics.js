@@ -8,11 +8,13 @@ var travelBox = document.getElementById("Travel");
 var literatureBox = document.getElementById("Literature");
 var wellnessBox = document.getElementById("Wellness");
 
+if (!firebase.apps.length) {
 firebase.initializeApp({
   apiKey: 'AIzaSyCu20JG8AjK8WkSykOnDx1EMABwpeETtgQ',
   authDomain: 'swe-project-63ce1.firebaseapp.com',
   projectId: 'swe-project-63ce1'
 });
+}
 
 var db = firebase.firestore();
 

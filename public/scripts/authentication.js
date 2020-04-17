@@ -1,5 +1,3 @@
-console.log("Hello, we're in authentication.js");
-
 /**
  * Handles the sign in button press.
  */
